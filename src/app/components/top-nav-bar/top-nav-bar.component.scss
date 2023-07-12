@@ -1,0 +1,46 @@
+.top-navbar {
+    position: fixed;
+    z-index: 9999;
+    padding: 0;
+    .profile-drop{
+        left:initial;
+        right:0;
+        .dropdown-item{
+         font-size: .8rem;
+        }
+    }
+    .search-input-nav{
+        .form-control{
+  background-color: #F3F3F3;
+  width: 14rem;
+  transition: 300ms;
+   &:focus{
+            box-shadow: none;
+            border: 0;
+            width: 18rem;
+        }
+        &::placeholder{
+            font-size: .8rem;
+        }
+        }
+      
+       
+    }
+}
+.notification-wrapper{
+    .dropdown-item{
+    background-color: #EFEFEF;
+    opacity: .7;
+    &:hover{
+        opacity: 1;
+
+    }
+}
+.notification-message {
+     p,strong{
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+}
+}
