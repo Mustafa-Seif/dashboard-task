@@ -27,7 +27,9 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "node_modules/highcharts/css/highcharts.css",
+              "src/styles.scss",
+              "src/media.scss"
             ],
             "scripts": [
               "node_modules/@popperjs/core/dist/umd/popper.min.js",

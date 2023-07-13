@@ -1,24 +1,97 @@
-
-.main-aside{
-    position: fixed;
-    height: 100vh;
-    padding-top: 5rem;
-   width: 19.5rem;
-background-color: #1B1E24;
-color: aliceblue;
-.profile-img{
+.main-aside {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding-top: 5rem;
+  width: 19.5rem;
+  background-color: #1b1e24;
+  color: aliceblue;
+  .profile-img {
     border-radius: 50%;
     width: 4.375rem;
     height: 4.375rem;
-}
-.aside-nav-item{
+  }
+  .aside-nav-item {
     margin-bottom: 1rem;
- a{
-    color: #8b91a0;
-    span{
-        margin-left: .5rem;
+    a {
+        
+      color: #8b91a0;
+      transition: 300ms;
+      &:hover{
+        color: #FFF;
+      }
+      span {
+        margin-left: 0.5rem;
+      }
     }
-}
+  }
 }
 
+.accordion {
+    .accordion-item{
+        background-color: #1B1E24 !important;
+  span{
+    font-size: .88rem;
+  }
+  }
+  .accordion-content{
+    background-color: #1b1e24;
+    color: rgb(251, 251, 252);
+        li{
+            background-color: #2B303B;
+            margin-left: 1rem;
+            padding: .5rem;
+            margin-bottom: .5rem;
+            margin-top: .5rem;
+            border-radius: .25em;
+
+            a{
+                color: #8b91a0;
+                &:hover{
+                    color: #FFF;
+                }
+            }
+        }
+  }
 }
+
+
+.accordion-button:after {
+  fill: red !important;
+  color: red;
+  filter: brightness(.4)
+}
+
+
+.accordion-item:not(.collapsed) {
+    border: 0 !important;
+    background-color: red !important;
+  }
+  .accordion-button:not(.collapsed){
+    box-shadow: none !important;
+  }
+
+
+.accordion .accordion-button:focus {
+  box-shadow: none !important;
+  border: none !important;
+}
+// .accordion .accordion-button::after {
+// //   background-color: red;
+//   color: red !important; 
+// // background-color: #2B303B;
+// }
+
+
+
+// .accordion .card-body {
+//   padding: 1rem 1.25rem;
+// }
+
+
+
+
+
+// .my-accordion .accordion-button .accordion-button-icon {
+//   --bs-accordion-btn-icon: red; /* Change to your desired color */
+// }

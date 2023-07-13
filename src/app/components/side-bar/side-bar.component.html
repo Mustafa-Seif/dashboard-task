@@ -1,6 +1,6 @@
 <aside class="main-aside">
   <div
-    class="profile-block d-flex justify-content-start align-items-center mb-4"
+    class="profile-block d-flex justify-content-start align-items-center mb-4 flex-wrap"
   >
     <img
       src="../../../assets/imgs/jon.png"
@@ -9,7 +9,7 @@
     />
     <div class="profile-title ms-3">
       <h4 class="mb-0 fs-5">Jonny Doo</h4>
-      <p style="color: #77705c; font-size: 1.05rem">@jonnydoo</p>
+      <p style="color: #8b91a0; font-size: 0.95rem">@jonnydoo</p>
     </div>
   </div>
   <nav class="aside_nav" id="aside_nav">
@@ -49,21 +49,44 @@
         </a>
       </li>
       <li class="aside-nav-item">
-        <a href="#">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-currency-dollar-fill"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"
-            />
-          </svg>
-          <span class="text-nav">Finances</span>
-        </a>
+        <div class="accordion" id="accordionPanelsStayOpenExample1">
+          <div class="accordion-item me-5" style="border: 0">
+            <a
+              href="#"
+              class="accordion-button collapsed p-0"
+              style="background-color: #1b1e24 !important"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapse1"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapse1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-currency-dollar-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"
+                />
+              </svg>
+              <span class="text-nav ms-2">Finances</span>
+            </a>
+            <div
+              id="panelsStayOpen-collapse1"
+              class="collapse"
+              aria-labelledby="panelsStayOpen-heading1"
+            >
+              <ul class="ps-0 accordion-content">
+                <li><a href="#">Incomes</a></li>
+                <li><a href="#">Outcomes</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </li>
       <li class="aside-nav-item">
         <a href="#">
@@ -85,24 +108,24 @@
           <span class="text-nav">Real time</span>
           <span
             class="badge badge-pill badge-info"
-            style="background-color: #1ca095; margin-left: 8rem"
+            style="background-color: #1ca095; margin-left: 7.8rem"
             >12</span
           >
         </a>
       </li>
       <hr class="me-4" />
-      
-      <li>
-        <div class="accordion" id="accordionPanelsStayOpenExample">
-          <div class="accordion-item me-5" style="border: 0;">
+      <li class="aside-nav-item">
+        <div class="accordion" id="accordionPanelsStayOpenExample2">
+          <div class="accordion-item me-5" style="border: 0">
             <a
               href="#"
-              class="accordion-button collapsed p-0 bg-dark text-light"
+              class="accordion-button collapsed p-0"
+              style="background-color: #1b1e24 !important"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseThree"
+              data-bs-target="#panelsStayOpen-collapse2"
               aria-expanded="false"
-              aria-controls="panelsStayOpen-collapseThree"
+              aria-controls="panelsStayOpen-collapse2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -122,16 +145,14 @@
               <span class="text-nav ms-2">Projects</span>
             </a>
             <div
-              id="panelsStayOpen-collapseThree"
-              class="accordion-collapse collapse"
-              aria-labelledby="panelsStayOpen-headingThree"
+              id="panelsStayOpen-collapse2"
+              class="collapse"
+              aria-labelledby="panelsStayOpen-heading2"
             >
-              <div class="accordion-body" style="background-color: #1B1E24; color: aliceblue;">
-                <ul class="ps-0">
-                    <li>Incomes</li>
-                    <li>Outcomes</li>
-                </ul>
-              </div>
+              <ul class="ps-0 accordion-content">
+                <li><a href="#"> Free ration nation </a></li>
+                <li><a href="#"> Cats going crazy </a></li>
+              </ul>
             </div>
           </div>
         </div>
