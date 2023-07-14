@@ -15,9 +15,6 @@ HC_accessibility(Highcharts);
   styleUrls: ['./daily-usage.component.scss']
 })
 export class DailyUsageComponent {
-
-
-
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Options = {};
   constructor() {
@@ -28,7 +25,9 @@ export class DailyUsageComponent {
         }
       },
       chart: {
-        type: 'pie'
+        type: 'pie',
+        // width: 350
+        height:300
       },
       title: {
         text: ''

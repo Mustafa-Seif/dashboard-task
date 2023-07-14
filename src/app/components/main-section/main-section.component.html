@@ -1,16 +1,27 @@
-<section class="content-page">
-  <!-- <gridster [options]="gridsterOptions">
-    <gridster-item [item]="gridsterItems[0]">
+<section class="main-section">
+  <button (click)="resetGridster()">Reset Gridster</button>
+  <gridster [options]="options" #gridster>
+    <gridster-item [item]="dashboard[0]" class="gridster-item">
       <app-overall></app-overall>
     </gridster-item>
-    <gridster-item [item]="gridsterItems[1]">
-        <app-quick-stats></app-quick-stats>
-      </gridster-item>
-      <gridster-item [item]="gridsterItems[2]">
-        <app-overall></app-overall>
-      </gridster-item>
-  </gridster> -->
-  <div class="container">
+    <gridster-item [item]="dashboard[1]" class="gridster-item">
+      <app-quick-stats (switchEvent)="switchEvent($event)"></app-quick-stats>
+    </gridster-item>
+    <gridster-item [item]="dashboard[2]" class="gridster-item">
+      <app-performance></app-performance>
+    </gridster-item>
+    <gridster-item [item]="dashboard[3]" class="gridster-item">
+      <app-ration></app-ration>
+    </gridster-item>
+    <gridster-item [item]="dashboard[4]" class="gridster-item">
+      <app-real-time-information></app-real-time-information>
+    </gridster-item>
+    <gridster-item [item]="dashboard[5]" class="gridster-item">
+      <app-daily-usage></app-daily-usage>
+    </gridster-item>
+  </gridster>
+
+  <!-- <div class="container">
  <div class="row row-gap-4">
     <app-overall class="col-md-7 custom-col"></app-overall>
     <app-quick-stats class="col-md-5 custom-col"></app-quick-stats>
@@ -19,5 +30,10 @@
     <app-real-time-information class="col-md-7 custom-col"></app-real-time-information>
     <app-daily-usage class="col-md-5 custom-col"></app-daily-usage>
  </div>
-</div>
+</div> -->
 </section>
+
+
+
+
+

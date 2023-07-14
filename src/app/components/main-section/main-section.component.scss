@@ -1,4 +1,16 @@
-.content-page {
+.main-section {
+  // border: solid 1px red;
   margin-top: 5rem;
   margin-bottom: 10rem;
+  // width:59rem;
+  height: 65rem;
+  // GRIDSTER STYLE 
+  .fit{
+    background-color: #E5E9EC;
+    .gridster-item{
+      border-radius: 7px;
+    }
+  }
+  
 }
+

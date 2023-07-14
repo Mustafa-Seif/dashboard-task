@@ -3,18 +3,25 @@
 
   <div class="card-body">
     <div class="quick-stats d-flex justify-content-between">
-      <strong>Today:</strong>
-      <span>78</span>
+      <strong>Resizable</strong>
+      <mat-slide-toggle (click)="changeResize()"></mat-slide-toggle>
     </div>
     <hr />
     <div class="quick-stats d-flex justify-content-between">
-      <strong>This month:</strong>
-      <span>459</span>
+      <strong>Draggable</strong>
+      <mat-slide-toggle  (click)="changeDragable()"></mat-slide-toggle>
+
+
     </div>
     <hr />
-    <div class="quick-stats d-flex justify-content-between">
-      <strong>All time:</strong>
-      <span>54k</span>
+    <div class="quick-stats d-flex justify-content-between align-items-center">
+      <strong>Rest gridster:</strong>
+      <div class="example-button-container">
+        <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" >
+          <mat-icon>settings_backup_restore</mat-icon>
+        </button>
+      </div>
+
     </div>
     <hr />
     <div class="quick-stats d-flex justify-content-between">

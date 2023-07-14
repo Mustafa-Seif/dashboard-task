@@ -16,6 +16,13 @@ import { DailyUsageComponent } from './components/highCharts/daily-usage/daily-u
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { QuickStatsComponent } from './components/highCharts/quick-stats/quick-stats.component';
 import { GridsterModule } from 'angular-gridster2';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { FormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule}from '@angular/material/icon';
+import { UiSwitchModule } from 'ngx-ui-switch';
+import { LoaderComponent } from './components/loader/loader.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +34,8 @@ import { GridsterModule } from 'angular-gridster2';
     RationComponent,
     RealTimeInformationComponent,
     DailyUsageComponent,
-    QuickStatsComponent
+    QuickStatsComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +44,19 @@ import { GridsterModule } from 'angular-gridster2';
     HighchartsChartModule,
     NgbModule,
     GridsterModule,
+    MatSlideToggleModule,
+    FormsModule,
+    MatButtonModule,
+    MatIconModule,
+    UiSwitchModule.forRoot({
+      size: 'small',
+      color: 'rgb(0, 189, 99)',
+      switchColor: '#80FFA2',
+      defaultBgColor: '#00ACFF',
+      defaultBoColor : '#476EFF',
+      checkedLabel: 'on',
+      uncheckedLabel: 'off'
+    }),
     NgCircleProgressModule.forRoot({
       "radius":50,
       "space": -10,

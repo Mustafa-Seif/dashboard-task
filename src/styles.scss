@@ -1,8 +1,4 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-
-/* You can add global styles to this file, and also import other style files */
-
-/* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
 
 
@@ -10,7 +6,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: borde-box;
 }
 body {
   font-family: "Cera light", "Courier New", Courier, monospace;
@@ -76,13 +72,19 @@ hr{
   }
 }
 
-
 .card{
+  border: 0 !important;
   h2{
     font-size: 1.3rem;
     font-weight: 700;
     margin-left: 1rem;
     margin-top: .5rem;
+    margin-bottom: .2rem;
+  }
+  .card-body{
+padding-top:0 ;
+padding-bottom:0 ;
+
   }
 }
 
@@ -93,5 +95,10 @@ hr{
 
 .custom-col > * {
   flex-grow: 1;
+}
+
+.highcharts-root{
+  height: 80%;
+  width: 100%;
 }
 

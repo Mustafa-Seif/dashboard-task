@@ -26,7 +26,8 @@ export class RationComponent {
         }
       },
       chart: {
-        type: 'area'
+        type: 'area',
+        height:290
     },
     accessibility: {
         description: ''
