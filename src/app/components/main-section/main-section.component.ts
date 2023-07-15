@@ -20,7 +20,7 @@ export class MainSectionComponent {
   options: GridsterConfig = {};
   dashboard: Array<GridsterItem> = [
     { cols: 2.9, rows: 1, y: 0, x: 0 },
-    { cols: 2.2, rows: 1, y: 0, x: 2.95 },
+    { cols: 2.2, rows: 1, y: 0, x: 2.95, dragEnabled: false },
     { cols: 3, rows: 1.2, y: 1.05, x: 0 },
     { cols: 2.1, rows: 1.2, y: 1.05, x: 3.05 },
     { cols: 2.5, rows: 1, y: 2.3, x: 0 },
@@ -90,7 +90,7 @@ export class MainSectionComponent {
     if (this.gridster) {
       this.dashboard= [
         { cols: 2.9, rows: 1, y: 0, x: 0 },
-        { cols: 2.2, rows: 1, y: 0, x: 2.95 },
+        { cols: 2.2, rows: 1, y: 0, x: 2.95,},
         { cols: 3, rows: 1.2, y: 1.05, x: 0 },
         { cols: 2.1, rows: 1.2, y: 1.05, x: 3.05 },
         { cols: 2.5, rows: 1, y: 2.3, x: 0 },

@@ -44,12 +44,20 @@
             margin-bottom: .5rem;
             margin-top: .5rem;
             border-radius: .25em;
+            transition: 300ms ease-in-out all;
+            cursor: pointer;
+             &:hover{
+                    background-color: #8b91a0;
+                    color: #fff;
+                }
+                &:hover a{
+                  // background-color: #8b91a0;
+                  color: #fff;
+              }
 
             a{
                 color: #8b91a0;
-                &:hover{
-                    color: #FFF;
-                }
+               
             }
         }
   }
