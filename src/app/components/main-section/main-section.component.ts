@@ -6,6 +6,7 @@ import {
   GridsterItemComponentInterface,
   GridType,
 } from 'angular-gridster2';
+import { SwitchData } from 'src/app/interfaces/switch-data';
 
 @Component({
   selector: 'app-main-section',
@@ -41,14 +42,15 @@ export class MainSectionComponent {
     gridSterOptions(){
       this.options = {
         swapWhileDragging:true,
-        enableCompact: false,
+        enableCompact: true,
+        compactType:"none",
         itemChangeCallback: MainSectionComponent.itemChange,
         itemResizeCallback: MainSectionComponent.itemResize,
         minCols: 2,
-        maxCols: 12,
+        maxCols: 40,
         minRows: 2,
-        maxRows: 12,
-        margin: 12,
+        maxRows: 40,
+        margin: 10,
         autoSize: true,
         draggable: {
           enabled: this.isDraggable,
@@ -60,7 +62,7 @@ export class MainSectionComponent {
         displayGrid: 'onDrag&Resize',
         pushItems: true,
         disableWindowResize: false,
-        disableAutoPositionOnConflict: true,
+        disableAutoPositionOnConflict: false,
         swap: true,
         enableEmptyCellDrop: true,
         emptyCellDropCallback: this.onComponentDrop.bind(this),
@@ -78,7 +80,7 @@ export class MainSectionComponent {
     this.gridSterOptions()
   }
   // GET SWITCHES VALAUE FROM EVENT EMITTER 
-  switchEvent(switches: any) {
+  switchEvent(switches: SwitchData) {
     this.isResizable = switches.isResizable;
     this.isDraggable = switches.isDraggable;
     // UPDATE GRIDSTER OPTIONS 
@@ -94,7 +96,10 @@ export class MainSectionComponent {
         { cols: 2.5, rows: 1, y: 2.3, x: 0 },
         { cols: 2.6, rows: 1, y: 2.3, x: 2.55 },
       ];
+     this.gridSterOptions()    
+     setTimeout(() => {
      this.gridSterOptions()        
+     }, 0);    
     }
   }
 }

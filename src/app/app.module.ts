@@ -20,7 +20,6 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule}from '@angular/material/icon';
-import { UiSwitchModule } from 'ngx-ui-switch';
 import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
@@ -48,19 +47,11 @@ import { LoaderComponent } from './components/loader/loader.component';
     FormsModule,
     MatButtonModule,
     MatIconModule,
-    UiSwitchModule.forRoot({
-      size: 'small',
-      color: 'rgb(0, 189, 99)',
-      switchColor: '#80FFA2',
-      defaultBgColor: '#00ACFF',
-      defaultBoColor : '#476EFF',
-      checkedLabel: 'on',
-      uncheckedLabel: 'off'
-    }),
     NgCircleProgressModule.forRoot({
       "radius":50,
       "space": -10,
       "outerStrokeGradient": true,
+      "outerStrokeLinecap":"square",
       "outerStrokeWidth": 10,
       "outerStrokeColor": "#6D5CAE",
       "outerStrokeGradientStopColor": "#6D5CAE",

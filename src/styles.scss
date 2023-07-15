@@ -25,6 +25,7 @@ hr{
   margin: 0.5rem;
 }
 
+
 /* END GENERAL STYLES  */
 
 
@@ -97,6 +98,9 @@ padding-bottom:0 ;
   flex-grow: 1;
 }
 
+.gridster-item{
+box-shadow: 1px 1px 6px 1px gray;
+}
 .highcharts-root{
   height: 80%;
   width: 100%;

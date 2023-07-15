@@ -29,8 +29,7 @@
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/highcharts/css/highcharts.css",
               "src/styles.scss",
-              "src/media.scss",
-              "./node_modules/ngx-ui-switch/ui-switch.component.css"
+              "src/media.scss"
             ],
             "scripts": [
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
