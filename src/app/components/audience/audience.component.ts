@@ -12,10 +12,12 @@ export class AudienceComponent {
   @ViewChild('myGrid', { static: false }) myGrid!: jqxGridComponent;
   @ViewChild('deleteM', { static: false }) deleteM!: any;
   @ViewChild('updateM', { static: false }) updateM!: any;
-  fNameUpdated:string ='';
-  lNameUpdated:string ='';
+  fNameUpdated: string = '';
+  lNameUpdated: string = '';
   indexItemDelete: number = 0;
   indexItemUpdate: number = 0;
+
+  idRow: number = 0;
 
   modalDeleteRef?: BsModalRef;
   modalUpdateRef?: BsModalRef;
@@ -28,6 +30,11 @@ export class AudienceComponent {
     });
   }
   deleteModalConfirm(): void {
+    // console.log("deleted!")
+    // console.log(this.idRow);
+    let id = this.myGrid.getrowid(this.idRow);
+    this.myGrid.deleterow(id);
+
     this.modalDeleteRef?.hide();
   }
 
@@ -36,16 +43,27 @@ export class AudienceComponent {
   }
 
   // UPDATE MODAL
-  updateModal() {
+  updateModal(row: any) {
+    this.fNameUpdated = row.bounddata.firstname;
+    this.lNameUpdated = row.bounddata.lastname;
     this.modalUpdateRef = this.modalService.show(this.updateM);
   }
   updateModalConfirm(): void {
+    //  console.log("updated!");
+    //   console.log(this.idRow);
+    let id = this.myGrid.getrowid(this.idRow);
+    this.myGrid.updaterow(id, {
+      firstname: this.fNameUpdated,
+      lastname: this.lNameUpdated,
+    });
+    this.lNameUpdated = '';
+    this.fNameUpdated = '';
+    this.myGrid.ensurerowvisible(this.idRow);
     this.modalUpdateRef?.hide();
   }
   updateModalDecline(): void {
     this.modalUpdateRef?.hide();
   }
-
 
   firstNames: string[] = [
     'Andrew',
@@ -127,69 +145,67 @@ export class AudienceComponent {
     { text: 'First Name', datafield: 'firstname', width: 400 },
     { text: 'Last Name', datafield: 'lastname', width: 400 },
     {
-      text: 'Action', datafield: 'action', width: 120,
-      createwidget: (row: number, column: any, value: string, htmlElement: HTMLElement): void => {
-          const deleteBtn = document.createElement('button');
-          const updateBtn = document.createElement('button');
-          const deleteId = `myDeleteBtn${this.counter}`;
-          const updateId = `myupdateBtn${this.counter}`;
-          deleteBtn.id = deleteId;
-          updateBtn.id = updateId;
-          deleteBtn.innerText = "delete"
-          updateBtn.innerText = "update"
-          deleteBtn.style.border = 'none';
-          updateBtn.style.border = 'none';
+      text: 'Action',
+      datafield: 'action',
+      width: 120,
+      createwidget: (
+        row: any,
+        column: any,
+        value: string,
+        htmlElement: HTMLElement
+      ): void => {
+        const deleteBtn = document.createElement('span');
+        const updateBtn = document.createElement('span');
+        const deleteId = `myDeleteBtn${this.counter}`;
+        const updateId = `myupdateBtn${this.counter}`;
+        deleteBtn.id = deleteId;
+        updateBtn.id = updateId;
+        deleteBtn.innerText = 'delete';
+        updateBtn.innerText = 'update';
+        deleteBtn.style.border = 'none';
+        deleteBtn.style.marginRight = '5px';
+        updateBtn.style.border = 'none';
 
-          htmlElement.appendChild(deleteBtn);
-          htmlElement.appendChild(updateBtn);
+        htmlElement.appendChild(deleteBtn);
+        htmlElement.appendChild(updateBtn);
 
-          const optionsDelete = {
-              width: '50%', height: 90, template: 'danger', 
-          };
-          const optionsUpdate = {
-            width: '50%', height: 90, template: 'success', 
+        const optionsDelete = {
+          width: '50%',
+          height: 90,
+          template: 'danger',
+        };
+        const optionsUpdate = {
+          width: '50%',
+          height: 90,
+          template: 'success',
         };
 
-          const myDeleteBtn = jqwidgets.createInstance(`#${deleteId}`, 'jqxButton', optionsDelete);
-          myDeleteBtn.addEventHandler('click',  ()=> {
-              console.log("delete");
-              
-          });
-          const myUpdateBtn = jqwidgets.createInstance(`#${updateId}`, 'jqxButton', optionsUpdate);
-          myUpdateBtn.addEventHandler('click',  ()=> {
-            console.log("update");
-              
-          });
-          this.counter++;
+        const myDeleteBtn = jqwidgets.createInstance(
+          `#${deleteId}`,
+          'jqxButton',
+          optionsDelete
+        );
+        myDeleteBtn.addEventHandler('click', () => {
+          this.idRow = row.boundindex;
+          this.deleteModal();
+        });
+        const myUpdateBtn = jqwidgets.createInstance(
+          `#${updateId}`,
+          'jqxButton',
+          optionsUpdate
+        );
+        myUpdateBtn.addEventHandler('click', () => {
+          this.idRow = row.boundindex;
+          this.updateModal(row);
+        });
+        this.counter++;
       },
-      initwidget: (row: number, column: any, value: any, htmlElement: HTMLElement): void => {
-        
-      }
-  },  
+      initwidget: (
+        row: number,
+        column: any,
+        value: any,
+        htmlElement: HTMLElement
+      ): void => {},
+    },
   ];
-
-  updateRow(id: number) {
-    // const rowIndex = this.dataAdapter.records.findIndex((item: any) => item.id === id);
-    // // Check if the row index is valid
-    // if (rowIndex > -1) {
-    //   // Get the row data
-    //   const rowData = this.dataAdapter.records[rowIndex];
-    // }
-    // console.log('updateRow');
-
-    // let addRowButton = jqwidgets.createInstance('.updateItem', 'jqxButton');
-    // return console.log("widget", addRowButton);
-    
-  }
-
-  deleteRow(id: number) {
-    // const rowIndex = this.dataAdapter.records.findIndex((item: any) => item.id === id);
-    // // Check if the row index is valid
-    // if (rowIndex > -1) {
-    //   // Remove the row from the data source
-    //   this.dataAdapter.records.splice(rowIndex, 1);
-    //   this.myGrid.updatebounddata();
-    // }
-    // console.log('deleteRow');
-  }
 }
