@@ -1,7 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "bootstrap/scss/bootstrap";
 
-
 /* START GENERAL STYLES  */
 * {
   margin: 0;
@@ -10,7 +9,7 @@
 }
 body {
   font-family: "Cera light", "Courier New", Courier, monospace;
-  background-color: #E5E9EC;
+  background-color: #e5e9ec;
 }
 
 a {
@@ -21,80 +20,62 @@ a {
 ul li {
   list-style-type: none;
 }
-hr{
+hr {
   margin: 0.5rem;
 }
 /* END GENERAL STYLES  */
 
-
-@media (max-width: 1200px) {
-   
+//START GRIDSTER BLOBAL STYLE
+.gridster-item {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
 }
+.highcharts-root {
+  height: 80%;
+  width: 100%;
+}
+//END GRIDSTER BLOBAL STYLE
 
-@media  (max-width: 992px) {
-  .top-navbar{
-    background-color:#252830 !important ;
-    button{
-      background-color: #FFF;
+// START MEDIA
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+  .top-navbar {
+    background-color: #252830 !important ;
+    button {
+      background-color: #fff;
     }
   }
-  .main-aside{
-      width: 5rem !important;
-      .profile-block{
-        img{
-          margin: auto !important;
-        }
-.profile-title {
+  .main-aside {
+    width: 5rem !important;
+    .profile-block {
+      img {
+        margin: auto !important;
+      }
+      .profile-title {
         display: none;
       }
+    }
+    .aside_nav {
+      hr {
+        display: none;
       }
-      .aside_nav{
-        hr{
-          display: none;
-        }
-        .aside-nav-item_wrapper{
-          .aside-nav-item{
-            .accordion-content{
-                  li{
-                      margin-left: 0rem !important;
-                  }
+      .aside-nav-item_wrapper {
+        .aside-nav-item {
+          .accordion-content {
+            li {
+              margin-left: 0rem !important;
             }
-            a{
-              span{
-                display: none;
-              }
+          }
+          a {
+            span {
+              display: none;
             }
           }
         }
       }
-
+    }
   }
 }
-.main-section{
-  .card{
-  border: 0 !important;
-  h2{
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-left: 1rem;
-    margin-top: .5rem;
-    margin-bottom: .2rem;
-  }
-  .card-body{
-padding-top:0 ;
-padding-bottom:0 ;
+// END MEDIA
 
-  }
-}
-}
-
-
-// GRIDSTER BLOBAL STYLE 
-.gridster-item{
-box-shadow:0 1px 4px 0 rgba(0, 0, 0, 0.37);
-}
-.highcharts-root{
-  height: 80%;
-  width: 100%;
-}
 

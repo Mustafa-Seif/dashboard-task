@@ -1,38 +1,73 @@
 <div class="container">
-    <jqxGrid #myGrid
-    [width]="getWidth()" [height]="350" [source]="dataAdapter" [columns]="columns" 
-     >
-</jqxGrid>
+  <jqxGrid
+    #myGrid
+    [width]="getWidth()"
+    [height]="350"
+    [source]="dataAdapter"
+    [columns]="columns"
+  >
+  </jqxGrid>
 </div>
-
-
-
-    <!-- <button type="button" class="btn btn-primary" (click)="deleteModal()">Delete row</button> -->
 <ng-template #deleteM>
   <div class="modal-body text-center">
     <p>Do you want delete this row?</p>
-    <button type="button" class="btn btn-default" (click)="deleteModalConfirm()" >Yes</button>
-    <button type="button" class="btn btn-primary" (click)="deleteModalDecline()" >No</button>
+    <button
+      type="button"
+      class="btn btn-default"
+      (click)="deleteModalConfirm()"
+    >
+      Yes
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="deleteModalDecline()"
+    >
+      No
+    </button>
   </div>
 </ng-template>
-
-
-<!-- <button type="button" class="btn btn-primary" (click)="updateModal()">Update row data</button> -->
 <ng-template #updateM>
-    <div class="modal-header">
-      <h4 class="modal-title pull-left">Update this row</h4>
-      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalUpdateRef?.hide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Update this row</h4>
+    <button
+      type="button"
+      class="btn-close close pull-right"
+      aria-label="Close"
+      (click)="modalUpdateRef?.hide()"
+    >
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    <input
+      type="text"
+      [(ngModel)]="fNameUpdated"
+      class="form-control mb-2"
+      placeholder="Enter Name"
+    />
+    <input
+      type="text"
+      [(ngModel)]="lNameUpdated"
+      class="form-control"
+      placeholder="Enter Last name"
+    />
+    <hr />
+    <form>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        (click)="updateModalConfirm()"
+      >
+        Ok
       </button>
-    </div>
-    <div class="modal-body text-center">
-          <input type="text" [(ngModel)]="fNameUpdated" class="form-control mb-2"   placeholder="Enter Name">
-          <input type="text" [(ngModel)]="lNameUpdated" class="form-control"   placeholder="Enter Last name">
-          <hr>
-      <button type="button" class="btn btn-primary" (click)="updateModalConfirm()" >Ok</button>
-      <button type="button" class="btn btn-default" (click)="updateModalDecline()" >Cancle</button>
-    </div>
-  </ng-template>
-
-
-
+      <button
+        type="button"
+        class="btn btn-default"
+        (click)="updateModalDecline()"
+      >
+        Cancle
+      </button>
+    </form>
+  </div>
+</ng-template>

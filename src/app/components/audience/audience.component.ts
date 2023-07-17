@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { jqxGridComponent } from 'jqwidgets-ng/jqxgrid';
-import { TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -16,9 +15,7 @@ export class AudienceComponent {
   lNameUpdated: string = '';
   indexItemDelete: number = 0;
   indexItemUpdate: number = 0;
-
   idRow: number = 0;
-
   modalDeleteRef?: BsModalRef;
   modalUpdateRef?: BsModalRef;
   constructor(private modalService: BsModalService) {}
@@ -30,18 +27,16 @@ export class AudienceComponent {
     });
   }
   deleteModalConfirm(): void {
-    // console.log("deleted!")
-    // console.log(this.idRow);
+    // GET ROW ID 
     let id = this.myGrid.getrowid(this.idRow);
+    // DELETE BY ROW ID 
     this.myGrid.deleterow(id);
-
+    // HIDE MODAL 
     this.modalDeleteRef?.hide();
   }
-
   deleteModalDecline(): void {
     this.modalDeleteRef?.hide();
   }
-
   // UPDATE MODAL
   updateModal(row: any) {
     this.fNameUpdated = row.bounddata.firstname;
@@ -49,9 +44,9 @@ export class AudienceComponent {
     this.modalUpdateRef = this.modalService.show(this.updateM);
   }
   updateModalConfirm(): void {
-    //  console.log("updated!");
-    //   console.log(this.idRow);
+    // GET ROW ID 
     let id = this.myGrid.getrowid(this.idRow);
+    // UPDATE ROW ID 
     this.myGrid.updaterow(id, {
       firstname: this.fNameUpdated,
       lastname: this.lNameUpdated,
@@ -59,6 +54,7 @@ export class AudienceComponent {
     this.lNameUpdated = '';
     this.fNameUpdated = '';
     this.myGrid.ensurerowvisible(this.idRow);
+    // HIDE MODAL 
     this.modalUpdateRef?.hide();
   }
   updateModalDecline(): void {
@@ -104,14 +100,14 @@ export class AudienceComponent {
     'Bjorn',
     'Nodier',
   ];
-
+  // GET GRID WIDTH
   getWidth(): any {
     if (document.body.offsetWidth < 850) {
       return '90%';
     }
-
     return 940;
   }
+  // GENERATE ROWS
   generaterow(): any {
     let row: any = {};
     row['firstname'] =
@@ -121,6 +117,7 @@ export class AudienceComponent {
 
     return row;
   }
+  // GENERATE GRID DATA
   generateData(): any {
     let data: any = {};
     for (let i = 0; i < 18; i++) {
@@ -208,4 +205,5 @@ export class AudienceComponent {
       ): void => {},
     },
   ];
+
 }

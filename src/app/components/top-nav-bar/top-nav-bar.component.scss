@@ -1,47 +1,50 @@
 .top-navbar {
-    position: fixed;
-    top: 0;
-    z-index: 9;
-    padding: 0;
-    .profile-drop{
-        left:initial;
-        right:0;
-        .dropdown-item{
-         font-size: .8rem;
-        }
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  padding: 0;
+  .profile-drop {
+    left: initial;
+    right: 0;
+    .dropdown-item {
+      font-size: 0.8rem;
     }
-    .search-input-nav{
-        .form-control{
-  background-color: #F3F3F3;
-  width: 14rem;
-  transition: 300ms;
-   &:focus{
-            box-shadow: none;
-            border: 0;
-            width: 18rem;
-        }
-        &::placeholder{
-            font-size: .8rem;
-        }
-        }
-      
-       
+  }
+  .search-input-nav {
+    .form-control {
+      background-color: #f3f3f3;
+      width: 14rem;
+      transition: 300ms;
+      &:focus {
+        box-shadow: none;
+        border: 0;
+        width: 18rem;
+      }
+      &::placeholder {
+        font-size: 0.8rem;
+      }
     }
+  }
+  .logo-container {
+    background-color: #252830;
+    color: #fff;
+    width: 19.5rem;
+  }
 }
-.notification-wrapper{
-    .dropdown-item{
-    background-color: #EFEFEF;
-    opacity: .7;
-    &:hover{
-        opacity: 1;
-
+.notification-wrapper {
+  .dropdown-item {
+    background-color: #efefef;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
     }
-}
-.notification-message {
-     p,strong{
-        white-space: nowrap; 
-        overflow: hidden;
-        text-overflow: ellipsis; 
+  }
+  .notification-message {
+    p,
+    strong {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-}
+  }
 }
