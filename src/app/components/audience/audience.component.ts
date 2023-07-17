@@ -161,6 +161,7 @@ export class AudienceComponent {
         updateBtn.innerText = 'update';
         deleteBtn.style.border = 'none';
         deleteBtn.style.marginRight = '5px';
+        deleteBtn.style.marginLeft= '4px';
         updateBtn.style.border = 'none';
 
         htmlElement.appendChild(deleteBtn);
