@@ -21,7 +21,11 @@ import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule}from '@angular/material/icon';
 import { LoaderComponent } from './components/loader/loader.component';
-
+import { AudienceComponent } from './components/audience/audience.component';
+import { jqxGridModule } from 'jqwidgets-ng/jqxgrid';
+import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
+import { RendererFactory2 } from '@angular/core';
+import { TestGridComponent } from './components/test-grid/test-grid.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +38,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     RealTimeInformationComponent,
     DailyUsageComponent,
     QuickStatsComponent,
-    LoaderComponent
+    LoaderComponent,
+    AudienceComponent,
+    TestGridComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +53,9 @@ import { LoaderComponent } from './components/loader/loader.component';
     FormsModule,
     MatButtonModule,
     MatIconModule,
+    jqxGridModule,
+    BrowserAnimationsModule,
+    ModalModule.forRoot(),
     NgCircleProgressModule.forRoot({
       "radius":50,
       "space": -10,

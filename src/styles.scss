@@ -6,7 +6,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: borde-box;
+  box-sizing: border-box;
 }
 body {
   font-family: "Cera light", "Courier New", Courier, monospace;
@@ -24,8 +24,6 @@ ul li {
 hr{
   margin: 0.5rem;
 }
-
-
 /* END GENERAL STYLES  */
 
 
@@ -72,8 +70,8 @@ hr{
 
   }
 }
-
-.card{
+.main-section{
+  .card{
   border: 0 !important;
   h2{
     font-size: 1.3rem;
@@ -88,18 +86,12 @@ padding-bottom:0 ;
 
   }
 }
-
-.custom-col {
-  display: flex;
-  flex-direction: column;
 }
 
-.custom-col > * {
-  flex-grow: 1;
-}
 
+// GRIDSTER BLOBAL STYLE 
 .gridster-item{
-box-shadow: 1px 1px 6px 1px gray;
+box-shadow:0 1px 4px 0 rgba(0, 0, 0, 0.37);
 }
 .highcharts-root{
   height: 80%;

@@ -1,7 +1,9 @@
 
 <app-top-nav-bar></app-top-nav-bar>
-<app-loader></app-loader>
 <div class="d-flex w-100">
+  <!-- <app-loader></app-loader> -->
   <app-side-bar style=" width: 19.5rem;"></app-side-bar>
-  <app-main-section class="app-side-bar" style="width: 75%;"></app-main-section>
+  <div style="width: 75%; margin-top: 5rem;">
+    <router-outlet></router-outlet>
+  </div>
 </div>

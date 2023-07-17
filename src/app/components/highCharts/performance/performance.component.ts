@@ -32,6 +32,7 @@ export class PerformanceComponent {
     chart: {
       polar: true,
       type: 'line',
+      height:350
     },
 
     title: {
@@ -69,7 +70,6 @@ export class PerformanceComponent {
       align: 'right',
       verticalAlign: 'top',
       y: 70,
-
       layout: 'vertical',
     },
 

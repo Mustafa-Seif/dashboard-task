@@ -42,14 +42,15 @@ export class MainSectionComponent {
     gridSterOptions(){
       this.options = {
         swapWhileDragging:true,
-        enableCompact: true,
+        enableCompact: false,
         compactType:"none",
+        mobileBreakpoint: 768,
         itemChangeCallback: MainSectionComponent.itemChange,
         itemResizeCallback: MainSectionComponent.itemResize,
-        minCols: 2,
-        maxCols: 40,
-        minRows: 2,
-        maxRows: 40,
+        minCols: 1,
+        maxCols: 20,
+        minRows: 1,
+        maxRows: 20,
         margin: 10,
         autoSize: true,
         draggable: {
@@ -57,6 +58,9 @@ export class MainSectionComponent {
         },
         resizable: {
           enabled: this.isResizable,
+          // stop: function(e, ui, $widget) {
+           
+          // }     
         },
         gridType: GridType.Fit,
         displayGrid: 'onDrag&Resize',
